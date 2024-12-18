@@ -130,5 +130,3 @@ int	main( void ) {
 	}
 	catch (exception &e) { cout << "Error: " << e.what() << endl; }
 }
-
-// 111488 too high
