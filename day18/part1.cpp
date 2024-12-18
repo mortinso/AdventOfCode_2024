@@ -26,28 +26,25 @@ void	move( Pair pos, deque<string> maze ) {
 		return;
 	}
 
+	maze[pos.second][pos.first] = '0';
 	// right
 	if (pos.first < SIDE - 1 && maze[pos.second][pos.first + 1] == '.' && cells[pos.second][pos.first] + 1 < cells[pos.second][pos.first + 1]) {
 		cells[pos.second][pos.first + 1] = cells[pos.second][pos.first] + 1;
-		maze[pos.second][pos.first] = '0';
 		move(make_pair(pos.first + 1, pos.second), maze);
 	}
 	// down
 	if (pos.second < SIDE - 1 && maze[pos.second + 1][pos.first] == '.' && cells[pos.second][pos.first] + 1 < cells[pos.second + 1][pos.first]) {
 		cells[pos.second + 1][pos.first] = cells[pos.second][pos.first] + 1;
-		maze[pos.second][pos.first] = '0';
 		move(make_pair(pos.first, pos.second + 1), maze);
 	}
 	// left
 	if (pos.first > 0 && maze[pos.second][pos.first - 1] == '.' && cells[pos.second][pos.first] + 1 < cells[pos.second][pos.first - 1]) {
 		cells[pos.second][pos.first - 1] = cells[pos.second][pos.first] + 1;
-		maze[pos.second][pos.first] = '0';
 		move(make_pair(pos.first - 1, pos.second), maze);
 	}
 	// up
 	if (pos.second > 0 && maze[pos.second - 1][pos.first] == '.' && cells[pos.second][pos.first] + 1 < cells[pos.second - 1][pos.first]) {
 		cells[pos.second - 1][pos.first] = cells[pos.second][pos.first] + 1;
-		maze[pos.second][pos.first] = '0';
 		move(make_pair(pos.first, pos.second - 1), maze);
 	}
 }
