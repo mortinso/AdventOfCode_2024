@@ -1,0 +1,5 @@
+.vscode/
+*/a.out
+*.o
+*/example
+*/input
